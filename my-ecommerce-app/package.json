@@ -2,6 +2,7 @@
   "name": "my-ecommerce-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://daksh88.github.io/E-Commerce/",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cra-template": "1.2.0",
