@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Navbar Style */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 20px;
+  position: sticky; /* Navbar remains fixed at the top */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: flex; /* Align items centrally */
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd; /* Placeholder background */
+}
+
+.slide {
+  display: none; /* Hide all slides initially */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+.slide.active {
+  display: block; /* Show active slide */
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures responsive scaling of images */
+}
+
+.offer-details {
+  position: absolute;
+  bottom: 20px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Offset for centering */
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 80%; /* Ensure content doesn't overflow */
+}
+
+.offer-details h3 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.offer-details p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* Horizontal Product List Slider */
+.product-list-slider {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 20px;
+  scroll-behavior: smooth; /* Smooth horizontal scrolling */
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  width: 250px; /* Reduced size for better visibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.product-card p {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  padding: 5px 10px;
+}
+
+.product-card button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.product-card button:hover {
+  background-color: #218838;
+}
+
+/* Popup Styles for Quantity Selection */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-bottom: 15px;
+}
+
+.popup-content .quantity-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-content button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  background-color: #218838;
+}
+
+.popup-content button:last-of-type {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+.popup-content button:last-of-type:hover {
+  background-color: #c82333;
+}
+
+/* Extra for Responsiveness */
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 300px; /* Adjust slideshow size for smaller screens */
+  }
+
+  .product-card {
+    width: 180px; /* Adjust card size for better fit */
+  }
+
+  .popup-content {
+    width: 90%; /* Use most of the screen width */
+  }
+}
+.quantity-control {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add space between buttons and number */
+  margin-bottom: 10px; /* Maintain consistent spacing below */
+}
+
+.quantity-control button {
+  background-color: #218838;
+  border: 1px solid #ccc;
+  padding: 8px 15px; /* Increased padding for better touch target */
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded buttons for better UI */
+}
+
+.quantity-control button:hover {
+  background-color: #ddd; /* Subtle hover effect */
+}
+
+.quantity-control span {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 10px; /* Add padding for breathing room */
+  color: #333;
+  min-width: 30px; /* Ensure consistent width */
+  text-align: center; /* Align numbers properly */
+}
+.section-heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+  color: #333;
+}
+/* Style for the vertical scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Style for the track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Light background for the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Style for the thumb (the draggable part) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid #f1f1f1; /* Small border between thumb and track */
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Darker thumb color on hover */
+}
+
+/* Horizontal scrollbar customization */
+::-webkit-scrollbar-horizontal {
+  height: 8px; /* Set the height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #888;
+}
