@@ -1,0 +1,107 @@
+/* Navbar styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  flex-wrap: wrap; /* Allows the navbar to wrap on smaller screens */
+}
+
+nav a, nav button {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  padding: 8px 12px;
+}
+
+nav a:hover, nav button:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+nav button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+/* Search Bar Styling */
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Increased size */
+  margin-right: auto; /* Pushes the search bar to the left */
+}
+
+.search-form input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #555;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: #28a745;
+}
+
+.search-form button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 5px;
+}
+
+.search-form button:hover {
+  background-color: #218838;
+}
+
+/* Navigation Links (Home, Cart, etc.) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a, .nav-links button {
+  margin-left: 15px; /* Space between links */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align left */
+  }
+
+  .search-form {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0; /* Add margin for spacing */
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around; /* Space out the links */
+    margin-top: 10px;
+  }
+
+  .nav-links a, .nav-links button {
+    margin-left: 0;
+    margin-right: 10px;
+    padding: 8px 15px; /* Adjust padding for mobile */
+  }
+}
